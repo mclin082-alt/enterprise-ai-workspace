@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "@openai/codex-sdk": "0.153.4",
+    "smol-toml": "1.8.0"
+  },
+  "name": "enterprise-ai-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node scripts/chat.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "verify:resume": "node scripts/verify-resume.mjs",
+    "verify:mcp": "node scripts/verify-mcp.mjs",
+    "connect:status": "node scripts/connect.mjs status",
+    "connect:outlook": "node scripts/connect.mjs outlook",
+    "connect:lark": "node scripts/connect.mjs lark",
+    "disconnect:outlook": "node scripts/connect.mjs disconnect outlook",
+    "disconnect:lark": "node scripts/connect.mjs disconnect lark",
+    "smoke": "node scripts/experiment.mjs smoke",
+    "repair": "node scripts/experiment.mjs repair"
+  }
+}

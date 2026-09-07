@@ -1,0 +1,25 @@
+# Platform configuration. The future SDK adapter must read this file.
+# This is not the native Codex config.toml format.
+# Endpoint, model availability, and Responses API compatibility are unverified.
+[provider]
+name = "qwen"
+wire_api = "responses"
+base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+model = "kimi-k3"
+api_key = ""
+
+# Optional BUILD-004–006 read-only connector setup. Keep this local file private.
+# Register Outlook as a public/native client. No client secret is used here.
+[connectors.outlook]
+client_id = ""
+tenant = "common"
+
+# Feishu OAuth currently requires an app secret for token exchange. This local
+# spike keeps it outside the model/runtime environment, but it is not a
+# production credential service.
+# Enable user scopes: offline_access, docx:document:readonly,
+# wiki:wiki:readonly; add the exact redirect_uri in the app security settings.
+[connectors.lark]
+app_id = ""
+app_secret = ""
+redirect_uri = "http://127.0.0.1:8765/callback"
